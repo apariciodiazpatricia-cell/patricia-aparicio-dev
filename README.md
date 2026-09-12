@@ -126,6 +126,7 @@ Todos mis proyectos cuentan con repositorio público en GitHub, despliegue en di
 * **Descripción:** E-commerce inmersivo con temática post-apocalíptica y cyber-punk.
 * **Stack:** React, OpenWeather API, Audio/Video FX, Gestión Reactiva de Estado.
 * **Aspectos Destacados:** Adaptación ambiental visual en directo según el clima meteorológico de la zona.
+* **Demo en Vivo:** [valhalla-del-chatarrero.vercel.app](https://valhalla-del-chatarrero.vercel.app/)
 
 ### 4. 📻 **LA BUHARDILLA RETRO**
 * **Descripción:** E-commerce vintage de artículos retro (años 60, 70 y 80).

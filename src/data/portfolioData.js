@@ -111,7 +111,7 @@ Disponibilidad: Inmediata para puestos de Frontend Junior (remoto o híbrido en 
       tags: ["React", "E-Commerce", "OpenWeather API", "Audio/Video FX", "State Management"],
       highlight: "Integración meteorológica en tiempo real y UI inmersiva",
       github: "https://github.com/apariciodiazpatricia-cell",
-      demo: "https://vercel.com/apariciodiazpatricia-cells-projects",
+      demo: "https://valhalla-del-chatarrero.vercel.app/",
       video: "/assets/valhalla-demo-CyQQvO7S.mp4",
       badge: "E-Commerce & Clima",
       color: "from-orange-600 to-red-600"
