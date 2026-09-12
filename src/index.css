@@ -1,31 +1,33 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-/* Patrón de rejilla estilo terminal de código */
-.bg-grid-pattern {
-    background-size: 40px 40px;
-    background-image:
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+@layer base {
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'JetBrains Mono', monospace;
+  }
 }
 
-/* Animación sutil para los focos de luz neón de fondo */
-@keyframes pulse-slow {
-
-    0%,
-    100% {
-        opacity: 0.15;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.25;
-        transform: scale(1.05);
-    }
+/* Ocultar barra de desplazamiento manteniendo el scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.animate-blob {
-    animation: pulse-slow 8s infinite ease-in-out;
+/* Scrollbar cyberpunk neon */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00FF66;
 }
