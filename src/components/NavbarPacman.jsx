@@ -27,19 +27,19 @@ export default function NavbarPacman() {
       <style>{`
         @keyframes pacmanRunway {
           0% {
-            transform: translateX(-320px);
+            transform: translateX(-340px);
           }
           100% {
-            transform: translateX(calc(100vw + 60px));
+            transform: translateX(calc(100vw + 80px));
           }
         }
 
         @keyframes pacmanAdvance {
           0% { transform: translateX(0px); }
-          25% { transform: translateX(55px); }
-          50% { transform: translateX(115px); }
-          75% { transform: translateX(175px); }
-          92%, 100% { transform: translateX(240px); }
+          25% { transform: translateX(65px); }
+          50% { transform: translateX(130px); }
+          75% { transform: translateX(195px); }
+          92%, 100% { transform: translateX(265px); }
         }
 
         @keyframes pacmanChompTop {
@@ -52,55 +52,51 @@ export default function NavbarPacman() {
           50% { transform: rotate(38deg); }
         }
 
-        @keyframes ghostWiggle {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-3px); }
-        }
-
         @keyframes scaredFlicker {
           0%, 65%, 100% { fill: #2b45ff; }
           75%, 90% { fill: #ffffff; }
         }
 
-        /* Desaparición al ser comidos y aparición de puntos */
+        /* 👻 El fantasma desaparece al ser alcanzado por Pac-Man */
         @keyframes ghost1Eaten {
           0%, 22% { opacity: 1; transform: scale(1); }
-          25%, 100% { opacity: 0; transform: scale(0); pointer-events: none; }
+          24%, 100% { opacity: 0; transform: scale(0); pointer-events: none; }
         }
+        /* 🔢 La puntuación reemplaza al fantasma en el centro exacto sin cortarse */
         @keyframes score1Popup {
-          0%, 22% { opacity: 0; transform: translateY(0px) scale(0.5); }
-          25%, 33% { opacity: 1; transform: translateY(-6px) scale(1.2); }
-          37%, 100% { opacity: 0; transform: translateY(-12px) scale(0.8); }
+          0%, 23% { opacity: 0; transform: scale(0.4); }
+          25%, 34% { opacity: 1; transform: scale(1.25); }
+          38%, 100% { opacity: 0; transform: scale(0.7); }
         }
 
         @keyframes ghost2Eaten {
           0%, 46% { opacity: 1; transform: scale(1); }
-          49%, 100% { opacity: 0; transform: scale(0); pointer-events: none; }
+          48%, 100% { opacity: 0; transform: scale(0); pointer-events: none; }
         }
         @keyframes score2Popup {
-          0%, 46% { opacity: 0; transform: translateY(0px) scale(0.5); }
-          49%, 57% { opacity: 1; transform: translateY(-6px) scale(1.2); }
-          61%, 100% { opacity: 0; transform: translateY(-12px) scale(0.8); }
+          0%, 47% { opacity: 0; transform: scale(0.4); }
+          49%, 58% { opacity: 1; transform: scale(1.25); }
+          62%, 100% { opacity: 0; transform: scale(0.7); }
         }
 
         @keyframes ghost3Eaten {
           0%, 70% { opacity: 1; transform: scale(1); }
-          73%, 100% { opacity: 0; transform: scale(0); pointer-events: none; }
+          72%, 100% { opacity: 0; transform: scale(0); pointer-events: none; }
         }
         @keyframes score3Popup {
-          0%, 70% { opacity: 0; transform: translateY(0px) scale(0.5); }
-          73%, 81% { opacity: 1; transform: translateY(-6px) scale(1.2); }
-          85%, 100% { opacity: 0; transform: translateY(-12px) scale(0.8); }
+          0%, 71% { opacity: 0; transform: scale(0.4); }
+          73%, 82% { opacity: 1; transform: scale(1.25); }
+          86%, 100% { opacity: 0; transform: scale(0.7); }
         }
 
         @keyframes ghost4Eaten {
           0%, 88% { opacity: 1; transform: scale(1); }
-          91%, 100% { opacity: 0; transform: scale(0); pointer-events: none; }
+          90%, 100% { opacity: 0; transform: scale(0); pointer-events: none; }
         }
         @keyframes score4Popup {
-          0%, 88% { opacity: 0; transform: translateY(0px) scale(0.5); }
-          91%, 96% { opacity: 1; transform: translateY(-6px) scale(1.2); }
-          99%, 100% { opacity: 0; transform: translateY(-12px) scale(0.8); }
+          0%, 89% { opacity: 0; transform: scale(0.4); }
+          91%, 97% { opacity: 1; transform: scale(1.25); }
+          99%, 100% { opacity: 0; transform: scale(0.7); }
         }
 
         .animate-pacman-runway {
@@ -206,7 +202,7 @@ export default function NavbarPacman() {
       </div>
 
       {/* 🕹️ PISTA PACMAN DEBAJO DEL NAVBAR (De lado a lado de la pantalla) */}
-      <div className="w-full h-8 relative overflow-hidden bg-black/75 border-t border-[#181818] select-none pointer-events-none flex items-center">
+      <div className="w-full h-9 relative overflow-hidden bg-black/80 border-t border-[#181818] select-none pointer-events-none flex items-center">
         
         {/* Línea de bolitas/pellets arcade de fondo */}
         <div className="absolute inset-0 flex items-center justify-between px-2 opacity-35">
@@ -223,7 +219,7 @@ export default function NavbarPacman() {
         </div>
 
         {/* Grupo en movimiento completo (12s de lado a lado) */}
-        <div className="absolute left-0 top-0 bottom-0 flex items-center animate-pacman-runway z-10 w-[300px]">
+        <div className="absolute left-0 top-0 bottom-0 flex items-center animate-pacman-runway z-10 w-[340px]">
           
           {/* 1. PAC-MAN persiguiendo y avanzando progresivamente hacia adelante */}
           <div className="absolute left-0 top-1/2 -translate-y-1/2 animate-pacman-advance z-30 flex items-center">
@@ -248,12 +244,12 @@ export default function NavbarPacman() {
             </div>
           </div>
 
-          {/* 2. Fantasmita 1 (Clyde) - Se lo come primero (25% del recorrido) */}
-          <div className="absolute left-[55px] top-1/2 -translate-y-1/2 flex items-center justify-center">
-            <span className="absolute -top-2.5 text-[10px] font-black text-[#00FF66] font-mono tracking-tighter score-popup-1 pointer-events-none drop-shadow-[0_0_5px_#00FF66] z-40">
+          {/* 2. Fantasmita 1 (Clyde) - Reemplazado por +200 */}
+          <div className="absolute left-[65px] top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center">
+            <span className="text-[11px] font-black text-[#00FF66] font-mono tracking-tighter score-popup-1 drop-shadow-[0_0_8px_#00FF66] select-none">
               +200
             </span>
-            <div className="ghost-eaten-1">
+            <div className="ghost-eaten-1 absolute inset-0 flex items-center justify-center">
               <svg viewBox="0 0 24 24" className="w-5 h-5 drop-shadow-[0_0_8px_rgba(43,69,255,0.8)] animate-pulse">
                 <path className="ghost-scared-body" d="M 3 12 A 9 9 0 0 1 21 12 L 21 21 L 18 18.5 L 15 21 L 12 18.5 L 9 21 L 6 18.5 L 3 21 Z" />
                 <circle cx="8" cy="10" r="1.8" fill="#ffffff" />
@@ -265,12 +261,12 @@ export default function NavbarPacman() {
             </div>
           </div>
 
-          {/* 3. Fantasmita 2 (Inky) - Se lo come segundo (50% del recorrido) */}
-          <div className="absolute left-[115px] top-1/2 -translate-y-1/2 flex items-center justify-center">
-            <span className="absolute -top-2.5 text-[10px] font-black text-[#00FFFF] font-mono tracking-tighter score-popup-2 pointer-events-none drop-shadow-[0_0_5px_#00FFFF] z-40">
+          {/* 3. Fantasmita 2 (Inky) - Reemplazado por +400 */}
+          <div className="absolute left-[130px] top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center">
+            <span className="text-[11px] font-black text-[#00FFFF] font-mono tracking-tighter score-popup-2 drop-shadow-[0_0_8px_#00FFFF] select-none">
               +400
             </span>
-            <div className="ghost-eaten-2">
+            <div className="ghost-eaten-2 absolute inset-0 flex items-center justify-center">
               <svg viewBox="0 0 24 24" className="w-5 h-5 drop-shadow-[0_0_8px_rgba(0,255,255,0.7)] animate-pulse">
                 <path className="ghost-scared-body" d="M 3 12 A 9 9 0 0 1 21 12 L 21 21 L 18 18.5 L 15 21 L 12 18.5 L 9 21 L 6 18.5 L 3 21 Z" />
                 <circle cx="8" cy="10" r="1.8" fill="#ffffff" />
@@ -282,12 +278,12 @@ export default function NavbarPacman() {
             </div>
           </div>
 
-          {/* 4. Fantasmita 3 (Pinky) - Se lo come tercero (75% del recorrido) */}
-          <div className="absolute left-[175px] top-1/2 -translate-y-1/2 flex items-center justify-center">
-            <span className="absolute -top-2.5 text-[10px] font-black text-[#FF66CC] font-mono tracking-tighter score-popup-3 pointer-events-none drop-shadow-[0_0_5px_#FF66CC] z-40">
+          {/* 4. Fantasmita 3 (Pinky) - Reemplazado por +800 */}
+          <div className="absolute left-[195px] top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center">
+            <span className="text-[11px] font-black text-[#FF66CC] font-mono tracking-tighter score-popup-3 drop-shadow-[0_0_8px_#FF66CC] select-none">
               +800
             </span>
-            <div className="ghost-eaten-3">
+            <div className="ghost-eaten-3 absolute inset-0 flex items-center justify-center">
               <svg viewBox="0 0 24 24" className="w-5 h-5 drop-shadow-[0_0_8px_rgba(255,102,204,0.7)] animate-pulse">
                 <path className="ghost-scared-body" d="M 3 12 A 9 9 0 0 1 21 12 L 21 21 L 18 18.5 L 15 21 L 12 18.5 L 9 21 L 6 18.5 L 3 21 Z" />
                 <circle cx="8" cy="10" r="1.8" fill="#ffffff" />
@@ -299,12 +295,12 @@ export default function NavbarPacman() {
             </div>
           </div>
 
-          {/* 5. Fantasmita 4 (Blinky) - Se lo come al final (90% del recorrido) */}
-          <div className="absolute left-[235px] top-1/2 -translate-y-1/2 flex items-center justify-center">
-            <span className="absolute -top-2.5 text-[10px] font-black text-[#FF0055] font-mono tracking-tighter score-popup-4 pointer-events-none drop-shadow-[0_0_5px_#FF0055] z-40">
+          {/* 5. Fantasmita 4 (Blinky) - Reemplazado por +1600 */}
+          <div className="absolute left-[260px] top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center">
+            <span className="text-[11px] font-black text-[#FFE600] font-mono tracking-tighter score-popup-4 drop-shadow-[0_0_8px_#FFE600] select-none">
               +1600
             </span>
-            <div className="ghost-eaten-4">
+            <div className="ghost-eaten-4 absolute inset-0 flex items-center justify-center">
               <svg viewBox="0 0 24 24" className="w-5 h-5 drop-shadow-[0_0_8px_rgba(255,0,85,0.8)] animate-pulse">
                 <path className="ghost-scared-body" d="M 3 12 A 9 9 0 0 1 21 12 L 21 21 L 18 18.5 L 15 21 L 12 18.5 L 9 21 L 6 18.5 L 3 21 Z" />
                 <circle cx="8" cy="10" r="1.8" fill="#ffffff" />
