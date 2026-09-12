@@ -68,9 +68,9 @@ export default function NavbarPacman() {
           25%, 100% { opacity: 0; transform: scale(0); pointer-events: none; }
         }
         @keyframes score1Popup {
-          0%, 22% { opacity: 0; transform: translateY(2px) scale(0.5); }
-          26% { opacity: 1; transform: translateY(-8px) scale(1.1); }
-          34%, 100% { opacity: 0; transform: translateY(-16px) scale(0.8); }
+          0%, 22% { opacity: 0; transform: translateY(0px) scale(0.5); }
+          25%, 33% { opacity: 1; transform: translateY(-6px) scale(1.2); }
+          37%, 100% { opacity: 0; transform: translateY(-12px) scale(0.8); }
         }
 
         @keyframes ghost2Eaten {
@@ -78,9 +78,9 @@ export default function NavbarPacman() {
           49%, 100% { opacity: 0; transform: scale(0); pointer-events: none; }
         }
         @keyframes score2Popup {
-          0%, 46% { opacity: 0; transform: translateY(2px) scale(0.5); }
-          50% { opacity: 1; transform: translateY(-8px) scale(1.1); }
-          58%, 100% { opacity: 0; transform: translateY(-16px) scale(0.8); }
+          0%, 46% { opacity: 0; transform: translateY(0px) scale(0.5); }
+          49%, 57% { opacity: 1; transform: translateY(-6px) scale(1.2); }
+          61%, 100% { opacity: 0; transform: translateY(-12px) scale(0.8); }
         }
 
         @keyframes ghost3Eaten {
@@ -88,9 +88,9 @@ export default function NavbarPacman() {
           73%, 100% { opacity: 0; transform: scale(0); pointer-events: none; }
         }
         @keyframes score3Popup {
-          0%, 70% { opacity: 0; transform: translateY(2px) scale(0.5); }
-          74% { opacity: 1; transform: translateY(-8px) scale(1.1); }
-          82%, 100% { opacity: 0; transform: translateY(-16px) scale(0.8); }
+          0%, 70% { opacity: 0; transform: translateY(0px) scale(0.5); }
+          73%, 81% { opacity: 1; transform: translateY(-6px) scale(1.2); }
+          85%, 100% { opacity: 0; transform: translateY(-12px) scale(0.8); }
         }
 
         @keyframes ghost4Eaten {
@@ -98,9 +98,9 @@ export default function NavbarPacman() {
           91%, 100% { opacity: 0; transform: scale(0); pointer-events: none; }
         }
         @keyframes score4Popup {
-          0%, 88% { opacity: 0; transform: translateY(2px) scale(0.5); }
-          92% { opacity: 1; transform: translateY(-8px) scale(1.1); }
-          98%, 100% { opacity: 0; transform: translateY(-16px) scale(0.8); }
+          0%, 88% { opacity: 0; transform: translateY(0px) scale(0.5); }
+          91%, 96% { opacity: 1; transform: translateY(-6px) scale(1.2); }
+          99%, 100% { opacity: 0; transform: translateY(-12px) scale(0.8); }
         }
 
         .animate-pacman-runway {
@@ -194,16 +194,19 @@ export default function NavbarPacman() {
           </button>
         </nav>
 
-        {/* Sección derecha: Status badge */}
-        <div className="flex items-center gap-2 bg-[#111] border border-[#222] hover:border-[#00FF66]/40 transition-colors px-3.5 py-1.5 rounded-full text-xs sm:text-[13px]">
+        {/* Sección derecha: Status badge con Puntuación Arcade */}
+        <div className="flex items-center gap-2 bg-[#111] border border-[#222] hover:border-[#00FF66]/40 transition-colors px-3 sm:px-3.5 py-1.5 rounded-full text-xs sm:text-[13px]">
           <span className="w-1.5 h-1.5 rounded-full bg-[#00FF66] animate-ping"></span>
           <span className="text-[#00FF66] font-semibold">status:</span>
-          <span className="text-gray-300">online_ready</span>
+          <span className="text-gray-300">online</span>
+          <span className="text-[10px] font-mono font-bold text-[#FFE600] border-l border-[#333] pl-2 tracking-wider">
+            +3000 PTS
+          </span>
         </div>
       </div>
 
       {/* 🕹️ PISTA PACMAN DEBAJO DEL NAVBAR (De lado a lado de la pantalla) */}
-      <div className="w-full h-7 relative overflow-hidden bg-black/60 border-t border-[#181818] select-none pointer-events-none flex items-center">
+      <div className="w-full h-8 relative overflow-hidden bg-black/75 border-t border-[#181818] select-none pointer-events-none flex items-center">
         
         {/* Línea de bolitas/pellets arcade de fondo */}
         <div className="absolute inset-0 flex items-center justify-between px-2 opacity-35">
@@ -247,8 +250,8 @@ export default function NavbarPacman() {
 
           {/* 2. Fantasmita 1 (Clyde) - Se lo come primero (25% del recorrido) */}
           <div className="absolute left-[55px] top-1/2 -translate-y-1/2 flex items-center justify-center">
-            <span className="absolute -top-3 text-[9px] font-extrabold text-[#00FF66] font-mono tracking-tighter score-popup-1 pointer-events-none">
-              200
+            <span className="absolute -top-2.5 text-[10px] font-black text-[#00FF66] font-mono tracking-tighter score-popup-1 pointer-events-none drop-shadow-[0_0_5px_#00FF66] z-40">
+              +200
             </span>
             <div className="ghost-eaten-1">
               <svg viewBox="0 0 24 24" className="w-5 h-5 drop-shadow-[0_0_8px_rgba(43,69,255,0.8)] animate-pulse">
@@ -264,8 +267,8 @@ export default function NavbarPacman() {
 
           {/* 3. Fantasmita 2 (Inky) - Se lo come segundo (50% del recorrido) */}
           <div className="absolute left-[115px] top-1/2 -translate-y-1/2 flex items-center justify-center">
-            <span className="absolute -top-3 text-[9px] font-extrabold text-[#00FFFF] font-mono tracking-tighter score-popup-2 pointer-events-none">
-              400
+            <span className="absolute -top-2.5 text-[10px] font-black text-[#00FFFF] font-mono tracking-tighter score-popup-2 pointer-events-none drop-shadow-[0_0_5px_#00FFFF] z-40">
+              +400
             </span>
             <div className="ghost-eaten-2">
               <svg viewBox="0 0 24 24" className="w-5 h-5 drop-shadow-[0_0_8px_rgba(0,255,255,0.7)] animate-pulse">
@@ -281,8 +284,8 @@ export default function NavbarPacman() {
 
           {/* 4. Fantasmita 3 (Pinky) - Se lo come tercero (75% del recorrido) */}
           <div className="absolute left-[175px] top-1/2 -translate-y-1/2 flex items-center justify-center">
-            <span className="absolute -top-3 text-[9px] font-extrabold text-[#FF66CC] font-mono tracking-tighter score-popup-3 pointer-events-none">
-              800
+            <span className="absolute -top-2.5 text-[10px] font-black text-[#FF66CC] font-mono tracking-tighter score-popup-3 pointer-events-none drop-shadow-[0_0_5px_#FF66CC] z-40">
+              +800
             </span>
             <div className="ghost-eaten-3">
               <svg viewBox="0 0 24 24" className="w-5 h-5 drop-shadow-[0_0_8px_rgba(255,102,204,0.7)] animate-pulse">
@@ -298,8 +301,8 @@ export default function NavbarPacman() {
 
           {/* 5. Fantasmita 4 (Blinky) - Se lo come al final (90% del recorrido) */}
           <div className="absolute left-[235px] top-1/2 -translate-y-1/2 flex items-center justify-center">
-            <span className="absolute -top-3 text-[9px] font-extrabold text-[#FF0055] font-mono tracking-tighter score-popup-4 pointer-events-none">
-              1600
+            <span className="absolute -top-2.5 text-[10px] font-black text-[#FF0055] font-mono tracking-tighter score-popup-4 pointer-events-none drop-shadow-[0_0_5px_#FF0055] z-40">
+              +1600
             </span>
             <div className="ghost-eaten-4">
               <svg viewBox="0 0 24 24" className="w-5 h-5 drop-shadow-[0_0_8px_rgba(255,0,85,0.8)] animate-pulse">
