@@ -1,17 +1,8 @@
 <div align="center">
 
-```text
-  ██████╗  █████╗ ████████╗██████╗ ██╗     █████╗ ██████╗  █████╗ ██████╗ ██╗ ██████╗██╗ ██████╗ 
-  ██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██║    ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║██╔════╝██║██╔═══██╗
-  ██████╔╝███████║   ██║   ██████╔╝██║    ███████║██████╔╝███████║██████╔╝██║██║     ██║██║   ██║
-  ██╔═══╝ ██╔══██║   ██║   ██╔══██╗██║    ██╔══██║██╔═══╝ ██╔══██║██╔══██╗██║██║     ██║██║   ██║
-  ██║     ██║  ██║   ██║   ██║  ██║██║    ██║  ██║██║     ██║  ██║██║  ██║██║╚██████╗██║╚██████╔╝
-  ╚═╝     ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝    ╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝╚═╝ ╚═════╝ 
-```
+<img src="./public/assets/header-pacman-name.svg" width="100%" alt="PATRI APARICIO - Pac-Man Devorador Neón" />
 
-### ⚡ `[ SISTEMA ONLINE ]` • `[ FRONTEND DEVELOPER JUNIOR ]` • `[ SEVILLA, ESPAÑA ]` ⚡
-
----
+<br><br>
 
 [![Matrix Theme](https://img.shields.io/badge/THEME-MATRIX_CYBERPUNK-00FF66?style=for-the-badge&logo=matrix&logoColor=black&labelColor=0a0a0a)](https://world-cup2026-sigma-weld.vercel.app/)
 [![React](https://img.shields.io/badge/REACT-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black&labelColor=0a0a0a)](https://react.dev/)
