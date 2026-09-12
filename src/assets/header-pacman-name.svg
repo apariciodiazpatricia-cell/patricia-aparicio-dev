@@ -33,11 +33,11 @@
   </defs>
 
   <style>
-    /* Ciclo total de animación: 8 segundos */
+    /* Ciclo total de animación: 8 segundos. Se fija explícitamente Y=79px para que coincida con las letras en Y=105px */
     @keyframes pacmanPass {
-      0% { transform: translateX(30px); }
-      88% { transform: translateX(850px); }
-      100% { transform: translateX(850px); }
+      0% { transform: translate(30px, 79px); }
+      88% { transform: translate(850px, 79px); }
+      100% { transform: translate(850px, 79px); }
     }
 
     @keyframes chompTop {
@@ -156,8 +156,8 @@
     <text x="726" y="105" class="neon-letter l13">O</text>
   </g>
 
-  <!-- Pac-Man Dinámico Devorando las Letras directamente centrado en Y=105 -->
-  <g class="pacman-eater" transform="translate(0, 79)">
+  <!-- Pac-Man Dinámico Devorando las Letras directamente centrado en Y=105 (Y=79 + radio 26 = 105) -->
+  <g class="pacman-eater">
     <g filter="url(#neon-glow-yellow)">
       <!-- Mandíbula Superior (Radio 26px para abarcar la altura de las letras) -->
       <path d="M 26,26 L 52,26 A 26,26 0 0,0 0,26 Z" fill="#FFE600" class="chomp-u" />
