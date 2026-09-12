@@ -220,13 +220,13 @@ npm run build
 
 ## 📚 09. DOCUMENTACIÓN TÉCNICA DEL PROYECTO
 
-Para profundizar en la arquitectura y decisiones técnicas, consulta las guías que he preparado:
+Para profundizar en la arquitectura y decisiones técnicas, consulta las guías que he preparado en la carpeta [`docs/`](./docs/):
 
-* 🏛️ [**Guía de Arquitectura del Sistema**](file:///c:/Proyectos/mi-portafolio/docs/ARCHITECTURE.md)
-* 🧩 [**Catálogo Detallado de Componentes**](file:///c:/Proyectos/mi-portafolio/docs/COMPONENTS.md)
-* 📡 [**Referencia de Endpoints y APIs**](file:///c:/Proyectos/mi-portafolio/docs/API_REFERENCE.md)
-* 🧪 [**Guía de Testing con Vitest y RTL**](file:///c:/Proyectos/mi-portafolio/docs/TESTING.md)
-* 🚀 [**Manual de Despliegue en Vercel y Cloud**](file:///c:/Proyectos/mi-portafolio/docs/DEPLOYMENT_GUIDE.md)
+* 🏛️ [**Guía de Arquitectura del Sistema**](./docs/ARCHITECTURE.md)
+* 🧩 [**Catálogo Detallado de Componentes**](./docs/COMPONENTS.md)
+* 📡 [**Referencia de Endpoints y APIs**](./docs/API_REFERENCE.md)
+* 🧪 [**Guía de Testing con Vitest y RTL**](./docs/TESTING.md)
+* 🚀 [**Manual de Despliegue en Vercel y Cloud**](./docs/DEPLOYMENT_GUIDE.md)
 
 ---
 
