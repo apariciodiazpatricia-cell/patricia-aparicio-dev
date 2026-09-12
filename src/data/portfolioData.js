@@ -124,7 +124,7 @@ Disponibilidad: Inmediata para puestos de Frontend Junior (remoto o híbrido en 
       tags: ["React", "Custom API (CRUD)", "Gestión Usuarios", "Meteo API", "Vintage UI", "Tailwind CSS"],
       highlight: "API propia con CRUD completo de artículos/usuarios + Meteo API en vivo",
       github: "https://github.com/apariciodiazpatricia-cell",
-      demo: "https://vercel.com/apariciodiazpatricia-cells-projects",
+      demo: "https://la-buhardilla-retro.vercel.app/",
       video: "/assets/buhardilla-demo-CgHES6-H.mp4",
       badge: "CRUD API & Retro E-Commerce",
       color: "from-lime-500 to-emerald-600"
