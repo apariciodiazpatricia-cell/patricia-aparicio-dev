@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 160" width="100%" height="160">
   <defs>
     <!-- Filtros Glow Neon -->
-    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+    <filter id="glow-neon" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="3" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
@@ -9,7 +9,7 @@
       </feMerge>
     </filter>
 
-    <filter id="yellow-glow" x="-20%" y="-20%" width="140%" height="140%">
+    <filter id="glow-yellow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="4" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
@@ -31,117 +31,16 @@
   </defs>
 
   <style>
-    @keyframes moveRunway {
-      0% { transform: translateX(-350px); }
-      100% { transform: translateX(950px); }
+    .score-txt {
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-weight: 900;
+      font-size: 15px;
+      text-anchor: middle;
+      dominant-baseline: central;
     }
-
-    @keyframes chompTop {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(-36deg); }
-    }
-
-    @keyframes chompBottom {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(36deg); }
-    }
-
-    @keyframes scaredColor {
-      0%, 70%, 100% { fill: #2855FF; }
-      80%, 95% { fill: #FFFFFF; }
-    }
-
-    @keyframes eatGhost1 {
-      0%, 20% { opacity: 1; }
-      24%, 100% { opacity: 0; }
-    }
-    @keyframes score1 {
-      0%, 20% { opacity: 0; }
-      25%, 35% { opacity: 1; }
-      40%, 100% { opacity: 0; }
-    }
-
-    @keyframes eatGhost2 {
-      0%, 45% { opacity: 1; }
-      49%, 100% { opacity: 0; }
-    }
-    @keyframes score2 {
-      0%, 45% { opacity: 0; }
-      50%, 60% { opacity: 1; }
-      65%, 100% { opacity: 0; }
-    }
-
-    @keyframes eatGhost3 {
-      0%, 70% { opacity: 1; }
-      74%, 100% { opacity: 0; }
-    }
-    @keyframes score3 {
-      0%, 70% { opacity: 0; }
-      75%, 85% { opacity: 1; }
-      90%, 100% { opacity: 0; }
-    }
-
-    /* Pac-Man avanza a través de los fantasmas manteniendo siempre Y=58px para centrarse en Y=80px */
-    @keyframes pacmanAdvance {
-      0% { transform: translate(0px, 58px); }
-      25% { transform: translate(70px, 58px); }
-      50% { transform: translate(140px, 58px); }
-      75% { transform: translate(210px, 58px); }
-      100% { transform: translate(280px, 58px); }
-    }
-
-    @keyframes dotPulse {
-      0%, 100% { opacity: 0.25; }
-      50% { opacity: 1; }
-    }
-
-    @keyframes neonFlicker {
-      0%, 100% { opacity: 1; }
-      93% { opacity: 1; }
-      94% { opacity: 0.6; }
-      95% { opacity: 1; }
-    }
-
-    .runway-group {
-      animation: moveRunway 7.5s linear infinite;
-    }
-
-    .pacman-runner {
-      animation: pacmanAdvance 7.5s ease-in-out infinite;
-    }
-
-    .chomp-upper {
-      transform-origin: 22px 22px;
-      animation: chompTop 0.22s ease-in-out infinite;
-    }
-
-    .chomp-lower {
-      transform-origin: 22px 22px;
-      animation: chompBottom 0.22s ease-in-out infinite;
-    }
-
-    .ghost-scared {
-      animation: scaredColor 0.8s infinite;
-    }
-
-    .ghost-item-1 { animation: eatGhost1 7.5s infinite; }
-    .score-item-1 { animation: score1 7.5s infinite; font-family: monospace; font-weight: 900; font-size: 14px; text-anchor: middle; dominant-baseline: central; }
-
-    .ghost-item-2 { animation: eatGhost2 7.5s infinite; }
-    .score-item-2 { animation: score2 7.5s infinite; font-family: monospace; font-weight: 900; font-size: 14px; text-anchor: middle; dominant-baseline: central; }
-
-    .ghost-item-3 { animation: eatGhost3 7.5s infinite; }
-    .score-item-3 { animation: score3 7.5s infinite; font-family: monospace; font-weight: 900; font-size: 14px; text-anchor: middle; dominant-baseline: central; }
-
-    .pulse-dot {
-      animation: dotPulse 1.2s ease-in-out infinite;
-    }
-
-    .hud-text {
-      font-family: 'Courier New', Courier, monospace, 'Segoe UI';
-      font-weight: 800;
-      letter-spacing: 2px;
-      animation: neonFlicker 4s infinite;
+    .hud-txt {
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-weight: bold;
     }
   </style>
 
@@ -153,91 +52,139 @@
   <line x1="20" y1="132" x2="880" y2="132" stroke="#1f2937" stroke-width="1" stroke-dasharray="4 4" />
 
   <!-- HUD Telemetría Superior -->
-  <text x="25" y="20" fill="#00FF66" font-size="10" class="hud-text">LEVEL: 2026 // POWER PELLET ACTIVE // EATING GHOSTS</text>
-  <text x="680" y="20" fill="#FFE600" font-size="10" class="hud-text">PATRI_OS v2.5 // ONLINE</text>
+  <text x="25" y="20" fill="#00FF66" font-size="10" class="hud-txt">LEVEL: 2026 // POWER PELLET ACTIVE // EATING GHOSTS</text>
+  <text x="680" y="20" fill="#FFE600" font-size="10" class="hud-txt">PATRI_OS v2.5 // ONLINE</text>
 
-  <!-- Pista de Puntos Energizers con Brillo Neón centrados en Y=80 -->
-  <g id="dots-track" fill="#FFE600" opacity="0.85">
-    <circle cx="60" cy="80" r="3.5" class="pulse-dot" />
-    <circle cx="110" cy="80" r="3.5" class="pulse-dot" />
-    <circle cx="160" cy="80" r="3.5" class="pulse-dot" />
-    <circle cx="210" cy="80" r="6" fill="#00FF66" filter="url(#neon-glow)" class="pulse-dot" />
-    <circle cx="260" cy="80" r="3.5" class="pulse-dot" />
-    <circle cx="310" cy="80" r="3.5" class="pulse-dot" />
-    <circle cx="360" cy="80" r="3.5" class="pulse-dot" />
-    <circle cx="410" cy="80" r="6" fill="#00FFAA" filter="url(#neon-glow)" class="pulse-dot" />
-    <circle cx="460" cy="80" r="3.5" class="pulse-dot" />
-    <circle cx="510" cy="80" r="3.5" class="pulse-dot" />
-    <circle cx="560" cy="80" r="3.5" class="pulse-dot" />
-    <circle cx="610" cy="80" r="6" fill="#00FF66" filter="url(#neon-glow)" class="pulse-dot" />
-    <circle cx="660" cy="80" r="3.5" class="pulse-dot" />
-    <circle cx="710" cy="80" r="3.5" class="pulse-dot" />
-    <circle cx="760" cy="80" r="6" fill="#FFE600" filter="url(#yellow-glow)" class="pulse-dot" />
-    <circle cx="810" cy="80" r="3.5" class="pulse-dot" />
-    <circle cx="850" cy="80" r="3.5" class="pulse-dot" />
+  <!-- Pista de Puntos Energizers con Brillo Neón centrados exactamente en Y=80 -->
+  <g fill="#FFE600" opacity="0.85">
+    <circle cx="60" cy="80" r="3.5" />
+    <circle cx="110" cy="80" r="3.5" />
+    <circle cx="160" cy="80" r="3.5" />
+    <circle cx="210" cy="80" r="6" fill="#00FF66" filter="url(#glow-neon)" />
+    <circle cx="260" cy="80" r="3.5" />
+    <circle cx="310" cy="80" r="3.5" />
+    <circle cx="360" cy="80" r="3.5" />
+    <circle cx="410" cy="80" r="6" fill="#00FFAA" filter="url(#glow-neon)" />
+    <circle cx="460" cy="80" r="3.5" />
+    <circle cx="510" cy="80" r="3.5" />
+    <circle cx="560" cy="80" r="3.5" />
+    <circle cx="610" cy="80" r="6" fill="#00FF66" filter="url(#glow-neon)" />
+    <circle cx="660" cy="80" r="3.5" />
+    <circle cx="710" cy="80" r="3.5" />
+    <circle cx="760" cy="80" r="6" fill="#FFE600" filter="url(#glow-yellow)" />
+    <circle cx="810" cy="80" r="3.5" />
+    <circle cx="850" cy="80" r="3.5" />
   </g>
 
-  <!-- Contenedor Dinámico: Pac-Man Persiguiendo y Devorando Fantasmas centrados en Y=80 -->
-  <g class="runway-group">
+  <!-- Grupo Completo de Pac-Man y Fantasmas desplazándose de forma continua exactamente en Y=80 -->
+  <g>
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="-350,80; 950,80"
+      keyTimes="0; 1"
+      dur="7.5s"
+      repeatCount="indefinite"
+    />
 
-    <!-- 🟡 PAC-MAN ATACANTE (Centrado exactamente en Y=80 vía animación Y=58 + 22) -->
-    <g class="pacman-runner" filter="url(#yellow-glow)">
-      <!-- Mandíbula Superior -->
-      <path d="M22,22 L44,22 A22,22 0 0,0 2,22 Z" fill="#FFE600" class="chomp-upper" />
-      <!-- Mandíbula Inferior -->
-      <path d="M22,22 L2,22 A22,22 0 0,0 44,22 Z" fill="#FFE600" class="chomp-lower" />
-      <!-- Ojo Retro -->
-      <circle cx="24" cy="10" r="2.5" fill="#000000" />
-    </g>
-
-    <!-- 👻 FANTASMITA 1 (Asustado / Comido a los 200 pts) en Y=64 (centro Y=80) -->
-    <g transform="translate(90, 64)">
-      <g class="ghost-item-1">
-        <path d="M0 16 A 14 14 0 0 1 28 16 L 28 32 L 24 28 L 20 32 L 14 28 L 8 32 L 4 28 L 0 32 Z" class="ghost-scared" filter="url(#neon-glow)" />
-        <circle cx="8" cy="14" r="3" fill="#FFE600" />
-        <circle cx="20" cy="14" r="3" fill="#FFE600" />
-        <path d="M6 24 Q10 21 14 24 Q18 21 22 24" stroke="#FFE600" stroke-width="2" fill="none" />
+    <!-- PAC-MAN (Persiguiendo desde atrás con avance progresivo hacia la derecha) -->
+    <g>
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0,0; 70,0; 140,0; 210,0; 280,0"
+        keyTimes="0; 0.25; 0.50; 0.75; 1"
+        dur="7.5s"
+        repeatCount="indefinite"
+      />
+      <!-- Cuerpo Pac-Man centrado en (0,0) -->
+      <g filter="url(#glow-yellow)">
+        <path d="M 0,0 L 22,0 A 22,22 0 0,0 -22,0 Z" fill="#FFE600">
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            values="0 0 0; -35 0 0; 0 0 0"
+            dur="0.2s"
+            repeatCount="indefinite"
+          />
+        </path>
+        <path d="M 0,0 L -22,0 A 22,22 0 0,0 22,0 Z" fill="#FFE600">
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            values="0 0 0; 35 0 0; 0 0 0"
+            dur="0.2s"
+            repeatCount="indefinite"
+          />
+        </path>
+        <circle cx="2" cy="-11" r="2.5" fill="#000000" />
       </g>
-      <!-- Puntuación Emergente en el centro exacto -->
-      <text x="14" y="16" fill="#00FF66" class="score-item-1" filter="url(#neon-glow)">+200</text>
     </g>
 
-    <!-- 👻 FANTASMITA 2 (Asustado / Comido a los 400 pts) en Y=64 (centro Y=80) -->
-    <g transform="translate(170, 64)">
-      <g class="ghost-item-2">
-        <path d="M0 16 A 14 14 0 0 1 28 16 L 28 32 L 24 28 L 20 32 L 14 28 L 8 32 L 4 28 L 0 32 Z" class="ghost-scared" filter="url(#neon-glow)" />
-        <circle cx="8" cy="14" r="3" fill="#FFE600" />
-        <circle cx="20" cy="14" r="3" fill="#FFE600" />
-        <path d="M6 24 Q10 21 14 24 Q18 21 22 24" stroke="#FFE600" stroke-width="2" fill="none" />
+    <!-- 👻 FANTASMITA 1 (Comido a los 200 pts) en x=90 -->
+    <g transform="translate(90, 0)">
+      <!-- Fantasma centrado en (0,0) -->
+      <g filter="url(#glow-neon)">
+        <animate attributeName="opacity" values="1; 1; 0; 0" keyTimes="0; 0.20; 0.24; 1" dur="7.5s" repeatCount="indefinite" />
+        <path d="M -14,-14 A 14 14 0 0 1 14,-14 L 14,14 L 10,10 L 6,14 L 0,10 L -6,14 L -10,10 L -14,14 Z" fill="#2855FF">
+          <animate attributeName="fill" values="#2855FF; #2855FF; #FFFFFF; #2855FF" keyTimes="0; 0.6; 0.8; 1" dur="0.8s" repeatCount="indefinite" />
+        </path>
+        <circle cx="-5" cy="-5" r="3" fill="#FFE600" />
+        <circle cx="5" cy="-5" r="3" fill="#FFE600" />
       </g>
-      <!-- Puntuación Emergente en el centro exacto -->
-      <text x="14" y="16" fill="#00FFAA" class="score-item-2" filter="url(#neon-glow)">+400</text>
+      <!-- Puntuación Emergente +200 -->
+      <text x="0" y="0" fill="#00FF66" class="score-txt" filter="url(#glow-neon)">
+        +200
+        <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.20; 0.25; 0.35; 0.40" dur="7.5s" repeatCount="indefinite" />
+      </text>
     </g>
 
-    <!-- 👻 FANTASMITA 3 (Asustado / Comido a los 800 pts) en Y=64 (centro Y=80) -->
-    <g transform="translate(250, 64)">
-      <g class="ghost-item-3">
-        <path d="M0 16 A 14 14 0 0 1 28 16 L 28 32 L 24 28 L 20 32 L 14 28 L 8 32 L 4 28 L 0 32 Z" class="ghost-scared" filter="url(#neon-glow)" />
-        <circle cx="8" cy="14" r="3" fill="#FFE600" />
-        <circle cx="20" cy="14" r="3" fill="#FFE600" />
-        <path d="M6 24 Q10 21 14 24 Q18 21 22 24" stroke="#FFE600" stroke-width="2" fill="none" />
+    <!-- 👻 FANTASMITA 2 (Comido a los 400 pts) en x=170 -->
+    <g transform="translate(170, 0)">
+      <g filter="url(#glow-neon)">
+        <animate attributeName="opacity" values="1; 1; 0; 0" keyTimes="0; 0.45; 0.49; 1" dur="7.5s" repeatCount="indefinite" />
+        <path d="M -14,-14 A 14 14 0 0 1 14,-14 L 14,14 L 10,10 L 6,14 L 0,10 L -6,14 L -10,10 L -14,14 Z" fill="#2855FF">
+          <animate attributeName="fill" values="#2855FF; #2855FF; #FFFFFF; #2855FF" keyTimes="0; 0.6; 0.8; 1" dur="0.8s" repeatCount="indefinite" />
+        </path>
+        <circle cx="-5" cy="-5" r="3" fill="#FFE600" />
+        <circle cx="5" cy="-5" r="3" fill="#FFE600" />
       </g>
-      <!-- Puntuación Emergente en el centro exacto -->
-      <text x="14" y="16" fill="#FFE600" class="score-item-3" filter="url(#yellow-glow)">+800</text>
+      <!-- Puntuación Emergente +400 -->
+      <text x="0" y="0" fill="#00FFAA" class="score-txt" filter="url(#glow-neon)">
+        +400
+        <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.45; 0.50; 0.60; 0.65" dur="7.5s" repeatCount="indefinite" />
+      </text>
     </g>
 
-    <!-- 🍒 Cereza Bonus al final del carril en centro Y=80 -->
-    <g transform="translate(330, 68)">
-      <circle cx="8" cy="14" r="6" fill="#FF0055" filter="url(#neon-glow)" />
-      <circle cx="18" cy="16" r="6" fill="#FF0055" filter="url(#neon-glow)" />
-      <path d="M8 10 Q14 2 18 4 Q16 10 16 12" stroke="#00FF66" stroke-width="2" fill="none" />
-      <path d="M18 4 Q22 0 25 3" stroke="#00FFAA" stroke-width="1.8" fill="none" />
+    <!-- 👻 FANTASMITA 3 (Comido a los 800 pts) en x=250 -->
+    <g transform="translate(250, 0)">
+      <g filter="url(#glow-neon)">
+        <animate attributeName="opacity" values="1; 1; 0; 0" keyTimes="0; 0.70; 0.74; 1" dur="7.5s" repeatCount="indefinite" />
+        <path d="M -14,-14 A 14 14 0 0 1 14,-14 L 14,14 L 10,10 L 6,14 L 0,10 L -6,14 L -10,10 L -14,14 Z" fill="#2855FF">
+          <animate attributeName="fill" values="#2855FF; #2855FF; #FFFFFF; #2855FF" keyTimes="0; 0.6; 0.8; 1" dur="0.8s" repeatCount="indefinite" />
+        </path>
+        <circle cx="-5" cy="-5" r="3" fill="#FFE600" />
+        <circle cx="5" cy="-5" r="3" fill="#FFE600" />
+      </g>
+      <!-- Puntuación Emergente +800 -->
+      <text x="0" y="0" fill="#FFE600" class="score-txt" filter="url(#glow-yellow)">
+        +800
+        <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.70; 0.75; 0.85; 0.90" dur="7.5s" repeatCount="indefinite" />
+      </text>
+    </g>
+
+    <!-- 🍒 Cereza Bonus en x=330 -->
+    <g transform="translate(330, 0)">
+      <circle cx="-5" cy="4" r="6" fill="#FF0055" filter="url(#glow-neon)" />
+      <circle cx="5" cy="6" r="6" fill="#FF0055" filter="url(#glow-neon)" />
+      <path d="M -5,0 Q 0,-12 5,-10 Q 3,-3 3,0" stroke="#00FF66" stroke-width="2" fill="none" />
+      <path d="M 5,-10 Q 9,-14 12,-11" stroke="#00FFAA" stroke-width="1.8" fill="none" />
     </g>
 
   </g>
 
   <!-- HUD Telemetría Inferior -->
-  <text x="25" y="148" fill="#A0A0A0" font-size="10" class="hud-text">
+  <text x="25" y="148" fill="#A0A0A0" font-size="10" class="hud-txt">
     &gt; MISSION: CONTRATAR A PATRI APARICIO // FRONTEND DEVELOPER // DISPONIBILIDAD INMEDIATA 🚀
   </text>
 

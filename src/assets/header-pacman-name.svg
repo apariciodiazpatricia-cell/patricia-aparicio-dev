@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 210" width="100%" height="210">
   <defs>
-    <!-- Filtros Glow Neón Verde -->
-    <filter id="neon-glow-green" x="-30%" y="-30%" width="160%" height="160%">
+    <!-- Filtro Glow Neón Verde -->
+    <filter id="glow-green" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="3.5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
@@ -11,7 +11,7 @@
     </filter>
 
     <!-- Filtro Glow Neón Amarillo -->
-    <filter id="neon-glow-yellow" x="-30%" y="-30%" width="160%" height="160%">
+    <filter id="glow-yellow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="4.5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
@@ -19,13 +19,13 @@
       </feMerge>
     </filter>
 
-    <linearGradient id="bg-header-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#050505" />
       <stop offset="50%" stop-color="#0d140d" />
       <stop offset="100%" stop-color="#020202" />
     </linearGradient>
 
-    <linearGradient id="neon-border" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00FF66" />
       <stop offset="50%" stop-color="#FFE600" />
       <stop offset="100%" stop-color="#00FFAA" />
@@ -33,146 +33,148 @@
   </defs>
 
   <style>
-    /* Ciclo total de animación: 8 segundos. Se fija explícitamente Y=79px para que coincida con las letras en Y=105px */
-    @keyframes pacmanPass {
-      0% { transform: translate(30px, 79px); }
-      88% { transform: translate(850px, 79px); }
-      100% { transform: translate(850px, 79px); }
-    }
-
-    @keyframes chompTop {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(-38deg); }
-    }
-
-    @keyframes chompBottom {
-      0%, 100% { transform: rotate(0deg); }
-      50% { transform: rotate(38deg); }
-    }
-
-    /* Animaciones individuales para cada letra al ser devorada */
-    @keyframes eatL1  { 0%, 10% { opacity: 1; transform: scale(1); } 12%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL2  { 0%, 16% { opacity: 1; transform: scale(1); } 18%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL3  { 0%, 21% { opacity: 1; transform: scale(1); } 23%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL4  { 0%, 27% { opacity: 1; transform: scale(1); } 29%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL5  { 0%, 33% { opacity: 1; transform: scale(1); } 35%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    
-    @keyframes eatDot { 0%, 38% { opacity: 0.8; transform: scale(1); } 40%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 0.8; transform: scale(1); } }
-
-    @keyframes eatL6  { 0%, 44% { opacity: 1; transform: scale(1); } 46%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL7  { 0%, 50% { opacity: 1; transform: scale(1); } 52%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL8  { 0%, 56% { opacity: 1; transform: scale(1); } 58%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL9  { 0%, 62% { opacity: 1; transform: scale(1); } 64%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL10 { 0%, 67% { opacity: 1; transform: scale(1); } 69%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL11 { 0%, 73% { opacity: 1; transform: scale(1); } 75%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL12 { 0%, 78% { opacity: 1; transform: scale(1); } 80%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL13 { 0%, 84% { opacity: 1; transform: scale(1); } 86%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
-
-    @keyframes flickerHUD {
-      0%, 100% { opacity: 1; }
-      93% { opacity: 1; }
-      94% { opacity: 0.5; }
-      95% { opacity: 1; }
-    }
-
-    .pacman-eater {
-      animation: pacmanPass 8s linear infinite;
-    }
-
-    .chomp-u {
-      transform-origin: 26px 26px;
-      animation: chompTop 0.2s ease-in-out infinite;
-    }
-
-    .chomp-d {
-      transform-origin: 26px 26px;
-      animation: chompBottom 0.2s ease-in-out infinite;
-    }
-
-    .neon-letter {
+    .neon-txt {
       font-family: 'Consolas', 'Courier New', monospace, sans-serif;
       font-weight: 900;
       font-size: 54px;
       fill: #00FF66;
       text-anchor: middle;
       dominant-baseline: central;
-      transform-box: fill-box;
-      transform-origin: center;
     }
-
-    .l1  { animation: eatL1 8s infinite; }
-    .l2  { animation: eatL2 8s infinite; }
-    .l3  { animation: eatL3 8s infinite; }
-    .l4  { animation: eatL4 8s infinite; }
-    .l5  { animation: eatL5 8s infinite; }
-    .ldot{ animation: eatDot 8s infinite; transform-box: fill-box; transform-origin: center; }
-    .l6  { animation: eatL6 8s infinite; }
-    .l7  { animation: eatL7 8s infinite; }
-    .l8  { animation: eatL8 8s infinite; }
-    .l9  { animation: eatL9 8s infinite; }
-    .l10 { animation: eatL10 8s infinite; }
-    .l11 { animation: eatL11 8s infinite; }
-    .l12 { animation: eatL12 8s infinite; }
-    .l13 { animation: eatL13 8s infinite; }
-
-    .hud-title {
+    .hud-txt {
       font-family: 'Consolas', 'Courier New', monospace;
       font-weight: bold;
-      animation: flickerHUD 4s infinite;
     }
   </style>
 
   <!-- Fondo Cyberpunk con Marco Neón -->
-  <rect x="2" y="2" width="896" height="206" rx="16" fill="url(#bg-header-grad)" stroke="url(#neon-border)" stroke-width="2.5" />
+  <rect x="2" y="2" width="896" height="206" rx="16" fill="url(#bg-grad)" stroke="url(#border-grad)" stroke-width="2.5" />
 
   <!-- Líneas Tácticas -->
   <line x1="20" y1="36" x2="880" y2="36" stroke="#00FF66" stroke-width="1" opacity="0.3" stroke-dasharray="6 6" />
   <line x1="20" y1="172" x2="880" y2="172" stroke="#00FF66" stroke-width="1" opacity="0.3" stroke-dasharray="6 6" />
 
   <!-- Telemetría Superior -->
-  <text x="30" y="25" fill="#00FF66" font-size="11" class="hud-title">SYSTEM_CORE: ACTIVE // MATRIX PROTOCOL // DEV_ID: PATRI_APARICIO</text>
-  <text x="695" y="25" fill="#FFE600" font-size="11" class="hud-title">STATUS: READY_TO_WORK ⚡</text>
+  <text x="30" y="25" fill="#00FF66" font-size="11" class="hud-txt">SYSTEM_CORE: ACTIVE // MATRIX PROTOCOL // DEV_ID: PATRI_APARICIO</text>
+  <text x="695" y="25" fill="#FFE600" font-size="11" class="hud-txt">STATUS: READY_TO_WORK ⚡</text>
 
-  <!-- Pista de Letras en Verde Neón "PATRI APARICIO" exactamente centradas en Y=105 -->
-  <g filter="url(#neon-glow-green)">
-    <!-- PATRI -->
-    <text x="110" y="105" class="neon-letter l1">P</text>
-    <text x="158" y="105" class="neon-letter l2">A</text>
-    <text x="206" y="105" class="neon-letter l3">T</text>
-    <text x="254" y="105" class="neon-letter l4">R</text>
-    <text x="302" y="105" class="neon-letter l5">I</text>
+  <!-- Pista de Letras en Verde Neón "PATRI APARICIO" centradas exactamente en Y=105 -->
+  <g filter="url(#glow-green)">
+    <!-- P -->
+    <text x="110" y="105" class="neon-txt">
+      P
+      <animate attributeName="opacity" values="1; 1; 0; 0; 1" keyTimes="0; 0.10; 0.12; 0.90; 0.94" dur="8s" repeatCount="indefinite" />
+    </text>
+    <!-- A -->
+    <text x="158" y="105" class="neon-txt">
+      A
+      <animate attributeName="opacity" values="1; 1; 0; 0; 1" keyTimes="0; 0.15; 0.17; 0.90; 0.94" dur="8s" repeatCount="indefinite" />
+    </text>
+    <!-- T -->
+    <text x="206" y="105" class="neon-txt">
+      T
+      <animate attributeName="opacity" values="1; 1; 0; 0; 1" keyTimes="0; 0.21; 0.23; 0.90; 0.94" dur="8s" repeatCount="indefinite" />
+    </text>
+    <!-- R -->
+    <text x="254" y="105" class="neon-txt">
+      R
+      <animate attributeName="opacity" values="1; 1; 0; 0; 1" keyTimes="0; 0.26; 0.28; 0.90; 0.94" dur="8s" repeatCount="indefinite" />
+    </text>
+    <!-- I -->
+    <text x="302" y="105" class="neon-txt">
+      I
+      <animate attributeName="opacity" values="1; 1; 0; 0; 1" keyTimes="0; 0.32; 0.34; 0.90; 0.94" dur="8s" repeatCount="indefinite" />
+    </text>
 
-    <!-- Espacio / Divisor Táctico -->
-    <circle cx="350" cy="105" r="4.5" fill="#00FFAA" class="ldot" />
+    <!-- Punto Divisor Táctico -->
+    <circle cx="350" cy="105" r="4.5" fill="#00FFAA">
+      <animate attributeName="opacity" values="1; 1; 0; 0; 1" keyTimes="0; 0.37; 0.39; 0.90; 0.94" dur="8s" repeatCount="indefinite" />
+    </circle>
 
-    <!-- APARICIO -->
-    <text x="398" y="105" class="neon-letter l6">A</text>
-    <text x="446" y="105" class="neon-letter l7">P</text>
-    <text x="494" y="105" class="neon-letter l8">A</text>
-    <text x="542" y="105" class="neon-letter l9">R</text>
-    <text x="588" y="105" class="neon-letter l10">I</text>
-    <text x="634" y="105" class="neon-letter l11">C</text>
-    <text x="680" y="105" class="neon-letter l12">I</text>
-    <text x="726" y="105" class="neon-letter l13">O</text>
+    <!-- A -->
+    <text x="398" y="105" class="neon-txt">
+      A
+      <animate attributeName="opacity" values="1; 1; 0; 0; 1" keyTimes="0; 0.43; 0.45; 0.90; 0.94" dur="8s" repeatCount="indefinite" />
+    </text>
+    <!-- P -->
+    <text x="446" y="105" class="neon-txt">
+      P
+      <animate attributeName="opacity" values="1; 1; 0; 0; 1" keyTimes="0; 0.48; 0.50; 0.90; 0.94" dur="8s" repeatCount="indefinite" />
+    </text>
+    <!-- A -->
+    <text x="494" y="105" class="neon-txt">
+      A
+      <animate attributeName="opacity" values="1; 1; 0; 0; 1" keyTimes="0; 0.54; 0.56; 0.90; 0.94" dur="8s" repeatCount="indefinite" />
+    </text>
+    <!-- R -->
+    <text x="542" y="105" class="neon-txt">
+      R
+      <animate attributeName="opacity" values="1; 1; 0; 0; 1" keyTimes="0; 0.60; 0.62; 0.90; 0.94" dur="8s" repeatCount="indefinite" />
+    </text>
+    <!-- I -->
+    <text x="588" y="105" class="neon-txt">
+      I
+      <animate attributeName="opacity" values="1; 1; 0; 0; 1" keyTimes="0; 0.65; 0.67; 0.90; 0.94" dur="8s" repeatCount="indefinite" />
+    </text>
+    <!-- C -->
+    <text x="634" y="105" class="neon-txt">
+      C
+      <animate attributeName="opacity" values="1; 1; 0; 0; 1" keyTimes="0; 0.71; 0.73; 0.90; 0.94" dur="8s" repeatCount="indefinite" />
+    </text>
+    <!-- I -->
+    <text x="680" y="105" class="neon-txt">
+      I
+      <animate attributeName="opacity" values="1; 1; 0; 0; 1" keyTimes="0; 0.76; 0.78; 0.90; 0.94" dur="8s" repeatCount="indefinite" />
+    </text>
+    <!-- O -->
+    <text x="726" y="105" class="neon-txt">
+      O
+      <animate attributeName="opacity" values="1; 1; 0; 0; 1" keyTimes="0; 0.82; 0.84; 0.90; 0.94" dur="8s" repeatCount="indefinite" />
+    </text>
   </g>
 
-  <!-- Pac-Man Dinámico Devorando las Letras directamente centrado en Y=105 (Y=79 + radio 26 = 105) -->
-  <g class="pacman-eater">
-    <g filter="url(#neon-glow-yellow)">
-      <!-- Mandíbula Superior (Radio 26px para abarcar la altura de las letras) -->
-      <path d="M 26,26 L 52,26 A 26,26 0 0,0 0,26 Z" fill="#FFE600" class="chomp-u" />
+  <!-- PAC-MAN: Desplazamiento nativo EXACTAMENTE por la línea Y=105 -->
+  <g>
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="30,105; 850,105; 850,105"
+      keyTimes="0; 0.88; 1"
+      dur="8s"
+      repeatCount="indefinite"
+    />
+    <!-- Cuerpo de Pac-Man centrado en (0,0) -->
+    <g filter="url(#glow-yellow)">
+      <!-- Mandíbula Superior -->
+      <path d="M 0,0 L 28,0 A 28,28 0 0,0 -28,0 Z" fill="#FFE600">
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          values="0 0 0; -35 0 0; 0 0 0"
+          dur="0.22s"
+          repeatCount="indefinite"
+        />
+      </path>
       <!-- Mandíbula Inferior -->
-      <path d="M 26,26 L 0,26 A 26,26 0 0,0 52,26 Z" fill="#FFE600" class="chomp-d" />
+      <path d="M 0,0 L -28,0 A 28,28 0 0,0 28,0 Z" fill="#FFE600">
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          values="0 0 0; 35 0 0; 0 0 0"
+          dur="0.22s"
+          repeatCount="indefinite"
+        />
+      </path>
       <!-- Ojo -->
-      <circle cx="28" cy="12" r="3.2" fill="#000000" />
+      <circle cx="2" cy="-14" r="3.2" fill="#000000" />
     </g>
-    <!-- Estela de Chispas Neón tras Pac-Man -->
-    <circle cx="-8" cy="26" r="3" fill="#00FF66" opacity="0.8" />
-    <circle cx="-20" cy="26" r="2" fill="#FFE600" opacity="0.5" />
+    <!-- Chispas Neón traseras -->
+    <circle cx="-32" cy="0" r="3" fill="#00FF66" opacity="0.8" />
+    <circle cx="-44" cy="0" r="2" fill="#FFE600" opacity="0.5" />
   </g>
 
   <!-- Subtítulo Táctico Inferior -->
-  <text x="450" y="193" text-anchor="middle" fill="#A0A0A0" font-size="12" class="hud-title">
+  <text x="450" y="193" text-anchor="middle" fill="#A0A0A0" font-size="12" class="hud-txt">
     ⚡ &lt; FRONTEND DEVELOPER JUNIOR • REACT 19 • JAVASCRIPT ES6+ • SEVILLA &gt; ⚡
   </text>
 </svg>
