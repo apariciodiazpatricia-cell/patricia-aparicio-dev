@@ -121,6 +121,7 @@ Todos mis proyectos cuentan con repositorio público en GitHub, despliegue en di
 * **Descripción:** Plataforma inmobiliaria de diseño premium para búsqueda y gestión de propiedades.
 * **Stack:** React, Tailwind CSS, Componentes Modulares, Filtros Dinámicos de Búsqueda.
 * **Aspectos Destacados:** Prototipado previo en **Figma** trasladado fielmente a código React (*Pixel-Perfect*).
+* **Demo en Vivo:** [inmobiliaria-kappa-lake.vercel.app](https://inmobiliaria-kappa-lake.vercel.app/)
 
 ### 3. 🛡️ **VALHALLA DEL CHATARRERO**
 * **Descripción:** E-commerce inmersivo con temática post-apocalíptica y cyber-punk.

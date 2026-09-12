@@ -98,7 +98,7 @@ Disponibilidad: Inmediata para puestos de Frontend Junior (remoto o híbrido en 
       tags: ["React", "Figma Design", "Responsive Design", "Modern UI", "Filters"],
       highlight: "Diseño fiel a Figma con alta fidelidad y UX adaptativa",
       github: "https://github.com/apariciodiazpatricia-cell",
-      demo: "https://vercel.com/apariciodiazpatricia-cells-projects",
+      demo: "https://inmobiliaria-kappa-lake.vercel.app/",
       video: "/assets/inmobiliaria-demo-Bv8omhny.mp4",
       badge: "Inmobiliaria & UX",
       color: "from-amber-500 to-orange-600"
