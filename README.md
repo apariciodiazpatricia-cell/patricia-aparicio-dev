@@ -239,14 +239,13 @@ Para profundizar en la arquitectura y decisiones técnicas, consulta las guías 
 
 ---
 
-## 🕹️ 10. PAC-MAN RUNWAY: FINAL DINÁMICO
-
-```text
-  🟡 · · · · · · · · · · · · · · · · · · · · · · · · · · · 👻 👻 👻 🍒
-  [ PATRI APARICIO // READY PLAYER ONE // GAME ON // DEV FOR HIRE ]
-```
+## 🕹️ 10. PAC-MAN RUNWAY: FINAL DINÁMICO & INTERACTIVO
 
 <div align="center">
+
+<img src="./public/assets/pacman-animation.svg" width="100%" alt="Pac-Man Cyberpunk Runway Animado" />
+
+</div>
 
 ---
 
