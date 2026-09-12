@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 210" width="100%" height="210">
   <defs>
     <!-- Filtros Glow Neón Verde -->
-    <filter id="neon-glow-green" x="-20%" y="-20%" width="140%" height="140%">
+    <filter id="neon-glow-green" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="3.5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
@@ -11,8 +11,8 @@
     </filter>
 
     <!-- Filtro Glow Neón Amarillo -->
-    <filter id="neon-glow-yellow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
+    <filter id="neon-glow-yellow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4.5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
@@ -21,7 +21,7 @@
 
     <linearGradient id="bg-header-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#050505" />
-      <stop offset="50%" stop-color="#0f140f" />
+      <stop offset="50%" stop-color="#0d140d" />
       <stop offset="100%" stop-color="#020202" />
     </linearGradient>
 
@@ -35,8 +35,8 @@
   <style>
     /* Ciclo total de animación: 8 segundos */
     @keyframes pacmanPass {
-      0% { transform: translateX(40px); }
-      82% { transform: translateX(850px); }
+      0% { transform: translateX(30px); }
+      88% { transform: translateX(850px); }
       100% { transform: translateX(850px); }
     }
 
@@ -50,21 +50,23 @@
       50% { transform: rotate(38deg); }
     }
 
-    /* Animaciones individuales para cada letra al ser comida */
-    @keyframes eatL1 { 0%, 13% { opacity: 1; transform: scale(1); } 15%, 88% { opacity: 0; transform: scale(0.2); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL2 { 0%, 18% { opacity: 1; transform: scale(1); } 20%, 88% { opacity: 0; transform: scale(0.2); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL3 { 0%, 23% { opacity: 1; transform: scale(1); } 25%, 88% { opacity: 0; transform: scale(0.2); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL4 { 0%, 28% { opacity: 1; transform: scale(1); } 30%, 88% { opacity: 0; transform: scale(0.2); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL5 { 0%, 33% { opacity: 1; transform: scale(1); } 35%, 88% { opacity: 0; transform: scale(0.2); } 94%, 100% { opacity: 1; transform: scale(1); } }
+    /* Animaciones individuales para cada letra al ser devorada */
+    @keyframes eatL1  { 0%, 10% { opacity: 1; transform: scale(1); } 12%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
+    @keyframes eatL2  { 0%, 16% { opacity: 1; transform: scale(1); } 18%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
+    @keyframes eatL3  { 0%, 21% { opacity: 1; transform: scale(1); } 23%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
+    @keyframes eatL4  { 0%, 27% { opacity: 1; transform: scale(1); } 29%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
+    @keyframes eatL5  { 0%, 33% { opacity: 1; transform: scale(1); } 35%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
     
-    @keyframes eatL6 { 0%, 42% { opacity: 1; transform: scale(1); } 44%, 88% { opacity: 0; transform: scale(0.2); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL7 { 0%, 47% { opacity: 1; transform: scale(1); } 49%, 88% { opacity: 0; transform: scale(0.2); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL8 { 0%, 52% { opacity: 1; transform: scale(1); } 54%, 88% { opacity: 0; transform: scale(0.2); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL9 { 0%, 57% { opacity: 1; transform: scale(1); } 59%, 88% { opacity: 0; transform: scale(0.2); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL10 { 0%, 62% { opacity: 1; transform: scale(1); } 64%, 88% { opacity: 0; transform: scale(0.2); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL11 { 0%, 67% { opacity: 1; transform: scale(1); } 69%, 88% { opacity: 0; transform: scale(0.2); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL12 { 0%, 72% { opacity: 1; transform: scale(1); } 74%, 88% { opacity: 0; transform: scale(0.2); } 94%, 100% { opacity: 1; transform: scale(1); } }
-    @keyframes eatL13 { 0%, 77% { opacity: 1; transform: scale(1); } 79%, 88% { opacity: 0; transform: scale(0.2); } 94%, 100% { opacity: 1; transform: scale(1); } }
+    @keyframes eatDot { 0%, 38% { opacity: 0.8; transform: scale(1); } 40%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 0.8; transform: scale(1); } }
+
+    @keyframes eatL6  { 0%, 44% { opacity: 1; transform: scale(1); } 46%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
+    @keyframes eatL7  { 0%, 50% { opacity: 1; transform: scale(1); } 52%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
+    @keyframes eatL8  { 0%, 56% { opacity: 1; transform: scale(1); } 58%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
+    @keyframes eatL9  { 0%, 62% { opacity: 1; transform: scale(1); } 64%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
+    @keyframes eatL10 { 0%, 67% { opacity: 1; transform: scale(1); } 69%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
+    @keyframes eatL11 { 0%, 73% { opacity: 1; transform: scale(1); } 75%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
+    @keyframes eatL12 { 0%, 78% { opacity: 1; transform: scale(1); } 80%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
+    @keyframes eatL13 { 0%, 84% { opacity: 1; transform: scale(1); } 86%, 88% { opacity: 0; transform: scale(0.1); } 94%, 100% { opacity: 1; transform: scale(1); } }
 
     @keyframes flickerHUD {
       0%, 100% { opacity: 1; }
@@ -78,20 +80,23 @@
     }
 
     .chomp-u {
-      transform-origin: 22px 22px;
+      transform-origin: 26px 26px;
       animation: chompTop 0.2s ease-in-out infinite;
     }
 
     .chomp-d {
-      transform-origin: 22px 22px;
+      transform-origin: 26px 26px;
       animation: chompBottom 0.2s ease-in-out infinite;
     }
 
     .neon-letter {
       font-family: 'Consolas', 'Courier New', monospace, sans-serif;
       font-weight: 900;
-      font-size: 52px;
+      font-size: 54px;
       fill: #00FF66;
+      text-anchor: middle;
+      dominant-baseline: central;
+      transform-box: fill-box;
       transform-origin: center;
     }
 
@@ -100,6 +105,7 @@
     .l3  { animation: eatL3 8s infinite; }
     .l4  { animation: eatL4 8s infinite; }
     .l5  { animation: eatL5 8s infinite; }
+    .ldot{ animation: eatDot 8s infinite; transform-box: fill-box; transform-origin: center; }
     .l6  { animation: eatL6 8s infinite; }
     .l7  { animation: eatL7 8s infinite; }
     .l8  { animation: eatL8 8s infinite; }
@@ -127,46 +133,42 @@
   <text x="30" y="25" fill="#00FF66" font-size="11" class="hud-title">SYSTEM_CORE: ACTIVE // MATRIX PROTOCOL // DEV_ID: PATRI_APARICIO</text>
   <text x="695" y="25" fill="#FFE600" font-size="11" class="hud-title">STATUS: READY_TO_WORK ⚡</text>
 
-  <!-- Pista de Letras en Verde Neón "PATRI APARICIO" -->
+  <!-- Pista de Letras en Verde Neón "PATRI APARICIO" exactamente centradas en Y=105 -->
   <g filter="url(#neon-glow-green)">
     <!-- PATRI -->
-    <g transform="translate(90, 118)">
-      <text x="0" y="0" class="neon-letter l1">P</text>
-      <text x="44" y="0" class="neon-letter l2">A</text>
-      <text x="88" y="0" class="neon-letter l3">T</text>
-      <text x="130" y="0" class="neon-letter l4">R</text>
-      <text x="172" y="0" class="neon-letter l5">I</text>
-    </g>
+    <text x="110" y="105" class="neon-letter l1">P</text>
+    <text x="158" y="105" class="neon-letter l2">A</text>
+    <text x="206" y="105" class="neon-letter l3">T</text>
+    <text x="254" y="105" class="neon-letter l4">R</text>
+    <text x="302" y="105" class="neon-letter l5">I</text>
 
     <!-- Espacio / Divisor Táctico -->
-    <circle cx="320" cy="102" r="3.5" fill="#00FFAA" opacity="0.7" />
+    <circle cx="350" cy="105" r="4.5" fill="#00FFAA" class="ldot" />
 
     <!-- APARICIO -->
-    <g transform="translate(355, 118)">
-      <text x="0" y="0" class="neon-letter l6">A</text>
-      <text x="44" y="0" class="neon-letter l7">P</text>
-      <text x="88" y="0" class="neon-letter l8">A</text>
-      <text x="132" y="0" class="neon-letter l9">R</text>
-      <text x="174" y="0" class="neon-letter l10">I</text>
-      <text x="212" y="0" class="neon-letter l11">C</text>
-      <text x="256" y="0" class="neon-letter l12">I</text>
-      <text x="296" y="0" class="neon-letter l13">O</text>
-    </g>
+    <text x="398" y="105" class="neon-letter l6">A</text>
+    <text x="446" y="105" class="neon-letter l7">P</text>
+    <text x="494" y="105" class="neon-letter l8">A</text>
+    <text x="542" y="105" class="neon-letter l9">R</text>
+    <text x="588" y="105" class="neon-letter l10">I</text>
+    <text x="634" y="105" class="neon-letter l11">C</text>
+    <text x="680" y="105" class="neon-letter l12">I</text>
+    <text x="726" y="105" class="neon-letter l13">O</text>
   </g>
 
-  <!-- Pac-Man Dinámico Devorando las Letras de izquierda a derecha -->
-  <g class="pacman-eater" transform="translate(0, 78)">
+  <!-- Pac-Man Dinámico Devorando las Letras directamente centrado en Y=105 -->
+  <g class="pacman-eater" transform="translate(0, 79)">
     <g filter="url(#neon-glow-yellow)">
-      <!-- Mandíbula Superior -->
-      <path d="M22,22 L44,22 A22,22 0 0,0 2,22 Z" fill="#FFE600" class="chomp-u" />
+      <!-- Mandíbula Superior (Radio 26px para abarcar la altura de las letras) -->
+      <path d="M 26,26 L 52,26 A 26,26 0 0,0 0,26 Z" fill="#FFE600" class="chomp-u" />
       <!-- Mandíbula Inferior -->
-      <path d="M22,22 L2,22 A22,22 0 0,0 44,22 Z" fill="#FFE600" class="chomp-d" />
+      <path d="M 26,26 L 0,26 A 26,26 0 0,0 52,26 Z" fill="#FFE600" class="chomp-d" />
       <!-- Ojo -->
-      <circle cx="24" cy="10" r="2.8" fill="#000000" />
+      <circle cx="28" cy="12" r="3.2" fill="#000000" />
     </g>
     <!-- Estela de Chispas Neón tras Pac-Man -->
-    <circle cx="-6" cy="22" r="2.5" fill="#00FF66" opacity="0.75" />
-    <circle cx="-16" cy="22" r="1.8" fill="#FFE600" opacity="0.5" />
+    <circle cx="-8" cy="26" r="3" fill="#00FF66" opacity="0.8" />
+    <circle cx="-20" cy="26" r="2" fill="#FFE600" opacity="0.5" />
   </g>
 
   <!-- Subtítulo Táctico Inferior -->
