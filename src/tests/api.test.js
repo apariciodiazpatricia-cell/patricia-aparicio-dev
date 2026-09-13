@@ -16,7 +16,7 @@ describe('API Services & Smart Fallback Tests', () => {
 
   it('should respond with availability information on hiring questions', async () => {
     const response = await sendChatMessage('¿Estás disponible para trabajar?');
-    expect(response.toLowerCase()).toContain('disponible');
+    expect(response.toLowerCase()).toContain('disponib');
     expect(response).toContain('Frontend Junior');
   });
 

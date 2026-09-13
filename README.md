@@ -116,24 +116,28 @@ Todos mis proyectos cuentan con repositorio público en GitHub, despliegue en di
 * **Stack:** React 19, JavaScript ES6+, React Router, CSS Variables, REST APIs.
 * **Aspectos Destacados:** Estadísticas dinámicas, filtros en tiempo real, navegación fluida y arquitectura modular.
 * **Demo en Vivo:** [world-cup2026-sigma-weld.vercel.app](https://world-cup2026-sigma-weld.vercel.app/)
+* **Repositorio GitHub:** [github.com/apariciodiazpatricia-cell/worldCup2026](https://github.com/apariciodiazpatricia-cell/worldCup2026)
 
 ### 2. 🏡 **HABITATCODE INMOBILIARIA**
 * **Descripción:** Plataforma inmobiliaria de diseño premium para búsqueda y gestión de propiedades.
 * **Stack:** React, Tailwind CSS, Componentes Modulares, Filtros Dinámicos de Búsqueda.
 * **Aspectos Destacados:** Prototipado previo en **Figma** trasladado fielmente a código React (*Pixel-Perfect*).
 * **Demo en Vivo:** [inmobiliaria-kappa-lake.vercel.app](https://inmobiliaria-kappa-lake.vercel.app/)
+* **Repositorio GitHub:** [github.com/apariciodiazpatricia-cell/inmobiliaria](https://github.com/apariciodiazpatricia-cell/inmobiliaria)
 
 ### 3. 🛡️ **VALHALLA DEL CHATARRERO**
 * **Descripción:** E-commerce inmersivo con temática post-apocalíptica y cyber-punk.
 * **Stack:** React, OpenWeather API, Audio/Video FX, Gestión Reactiva de Estado.
 * **Aspectos Destacados:** Adaptación ambiental visual en directo según el clima meteorológico de la zona.
 * **Demo en Vivo:** [valhalla-del-chatarrero.vercel.app](https://valhalla-del-chatarrero.vercel.app/)
+* **Repositorio GitHub:** [github.com/apariciodiazpatricia-cell/valhalla-del-chatarrero](https://github.com/apariciodiazpatricia-cell/valhalla-del-chatarrero)
 
 ### 4. 📻 **LA BUHARDILLA RETRO**
 * **Descripción:** E-commerce vintage de artículos retro (años 60, 70 y 80).
 * **Stack:** React, API Propia CRUD, Gestión de Usuarios, OpenWeather API, Tailwind CSS.
 * **Aspectos Destacados:** Consume una API propia para operaciones CRUD de catálogo y usuarios, sincronizada con efectos climáticos.
 * **Demo en Vivo:** [la-buhardilla-retro.vercel.app](https://la-buhardilla-retro.vercel.app/)
+* **Repositorio GitHub:** [github.com/apariciodiazpatricia-cell/la-buhardilla-retro](https://github.com/apariciodiazpatricia-cell/la-buhardilla-retro)
 
 ---
 

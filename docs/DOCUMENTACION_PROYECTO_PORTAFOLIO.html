@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Documentación Técnica Integral - Patri Aparicio Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4;
+      margin: 18mm 15mm 18mm 15mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1a202c;
+      background-color: #ffffff;
+      line-height: 1.6;
+      font-size: 11.5pt;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Portada */
+    .cover {
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 85vh;
+      border: 3px solid #00c853;
+      border-radius: 12px;
+      padding: 40px;
+      background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+      color: #ffffff;
+      position: relative;
+    }
+
+    .cover-badge {
+      display: inline-block;
+      background-color: rgba(0, 255, 102, 0.15);
+      color: #00FF66;
+      border: 1px solid #00FF66;
+      padding: 6px 14px;
+      font-size: 10pt;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .cover h1 {
+      font-size: 28pt;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 10px 0;
+      letter-spacing: -0.5px;
+    }
+
+    .cover h1 span {
+      color: #00FF66;
+    }
+
+    .cover h2 {
+      font-size: 16pt;
+      font-weight: 500;
+      color: #9ca3af;
+      margin: 0 0 30px 0;
+    }
+
+    .cover-meta {
+      margin-top: 40px;
+      border-top: 1px solid #30363d;
+      padding-top: 25px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      font-size: 10pt;
+      color: #c9d1d9;
+    }
+
+    .cover-meta-item strong {
+      color: #00FF66;
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* Títulos y Secciones */
+    h1, h2, h3, h4 {
+      color: #0f172a;
+      font-weight: 700;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      page-break-after: avoid;
+    }
+
+    h1 {
+      font-size: 18pt;
+      border-bottom: 2px solid #00c853;
+      padding-bottom: 6px;
+      margin-top: 36px;
+    }
+
+    h2 {
+      font-size: 14pt;
+      color: #1e293b;
+      border-left: 4px solid #00c853;
+      padding-left: 10px;
+    }
+
+    h3 {
+      font-size: 12pt;
+      color: #334155;
+    }
+
+    p, li {
+      color: #334155;
+      margin-bottom: 8px;
+    }
+
+    ul, ol {
+      padding-left: 22px;
+      margin-top: 6px;
+      margin-bottom: 14px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    /* Tablas */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px 0;
+      font-size: 10.5pt;
+      page-break-inside: avoid;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 9px 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #0f172a;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 10pt;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    /* Bloques de código */
+    pre {
+      background-color: #0d1117;
+      color: #00FF66;
+      font-family: 'Fira Code', monospace;
+      font-size: 9.5pt;
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid #30363d;
+      overflow-x: auto;
+      margin: 14px 0 20px 0;
+      page-break-inside: avoid;
+      line-height: 1.45;
+    }
+
+    code {
+      font-family: 'Fira Code', monospace;
+      font-size: 9.5pt;
+      background-color: #f1f5f9;
+      color: #0f172a;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid #e2e8f0;
+    }
+
+    pre code {
+      background-color: transparent;
+      color: inherit;
+      padding: 0;
+      border: none;
+    }
+
+    /* Enlaces */
+    a {
+      color: #0284c7;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Cajas destacadas */
+    .callout {
+      background-color: #f0fdf4;
+      border-left: 4px solid #16a34a;
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      margin: 16px 0;
+      font-size: 10.5pt;
+      page-break-inside: avoid;
+    }
+
+    .callout strong {
+      color: #15803d;
+    }
+
+    .badge {
+      display: inline-block;
+      font-family: 'Fira Code', monospace;
+      font-size: 8.5pt;
+      font-weight: 600;
+      background-color: #e2e8f0;
+      color: #334155;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-right: 4px;
+      margin-bottom: 4px;
+    }
+
+    .badge-green {
+      background-color: #dcfce7;
+      color: #166534;
+      border: 1px solid #86efac;
+    }
+
+    .badge-blue {
+      background-color: #e0f2fe;
+      color: #075985;
+      border: 1px solid #7dd3fc;
+    }
+
+    .page-break {
+      page-break-after: always;
+    }
+
+    /* Footer de impresión */
+    .doc-footer {
+      margin-top: 40px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 15px;
+      text-align: center;
+      font-size: 9pt;
+      color: #64748b;
+      font-family: 'Fira Code', monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PORTADA -->
+  <div class="cover">
+    <div class="cover-badge">DOCUMENTACIÓN OFICIAL DEL PROYECTO</div>
+    <h1>PORTAFOLIO PROFESIONAL<br><span>PATRI APARICIO</span></h1>
+    <h2>Manual de Arquitectura, Componentes, APIs y Despliegue</h2>
+    
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <strong>DESARROLLADORA:</strong><br>
+        Patricia Aparicio Díaz (Patri Aparicio)
+      </div>
+      <div class="cover-meta-item">
+        <strong>ESPECIALIDAD:</strong><br>
+        Frontend Developer Junior (React 19 / JS ES6+)
+      </div>
+      <div class="cover-meta-item">
+        <strong>URL EN PRODUCCIÓN:</strong><br>
+        <a href="https://patricia-aparicio-dev.vercel.app/" style="color: #00FF66;">patricia-aparicio-dev.vercel.app</a>
+      </div>
+      <div class="cover-meta-item">
+        <strong>FECHA / VERSIÓN:</strong><br>
+        2026 • Versión 1.0.0
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 1 -->
+  <h1>1. Resumen Ejecutivo y Ficha Técnica</h1>
+  <p>
+    Esta plataforma web representa el portafolio profesional interactivo de <strong>Patri Aparicio</strong>, concebido para ofrecer una experiencia inmersiva con temática <em>Matrix Cyberpunk</em>, rendimiento optimizado y un asistente conversacional dotado de Inteligencia Artificial (Google Gemini 2.5 Flash).
+  </p>
+
+  <div class="callout">
+    <strong>Propósito Principal:</strong> Demostrar competencias sólidas en desarrollo Frontend con <strong>React 19</strong>, maquetación responsiva con <strong>Tailwind CSS</strong>, diseño UI/UX en <strong>Figma & Stitch</strong>, consumo de <strong>APIs REST</strong> y testing automatizado con <strong>Vitest</strong>.
+  </div>
+
+  <h3>Ficha Técnica del Stack</h3>
+  <table>
+    <thead>
+      <tr>
+        <th width="30%">Capa</th>
+        <th width="70%">Tecnologías y Librerías</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Frontend Core</strong></td>
+        <td>React 19, React 18, JavaScript ES6+, HTML5 Semántico, Vite 8.3 Turbo</td>
+      </tr>
+      <tr>
+        <td><strong>Estilos y UI/UX</strong></td>
+        <td>Tailwind CSS 3.4, Vanilla CSS (Keyframes & CRT Scanlines), Figma, Stitch IA</td>
+      </tr>
+      <tr>
+        <td><strong>Microservicios & IA</strong></td>
+        <td>Node.js 20.x, Express, @google/genai (Gemini 2.5 Flash), REST API</td>
+      </tr>
+      <tr>
+        <td><strong>Testing & Calidad</strong></td>
+        <td>Vitest 5.0, React Testing Library, JSDOM, Component Mocks</td>
+      </tr>
+      <tr>
+        <td><strong>Despliegue & CI/CD</strong></td>
+        <td>Vercel (Frontend), Render (Backend Node), Git Flow, GitHub Actions</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECCIÓN 2 -->
+  <div class="page-break"></div>
+  <h1>2. Arquitectura del Sistema y Flujo de Datos</h1>
+  <p>
+    El sistema opera mediante una arquitectura desacoplada de <strong>Single Page Application (SPA)</strong> en el cliente comunicada mediante llamadas asíncronas REST con un microservicio backend en Node.js.
+  </p>
+
+  <pre>
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                CLIENTE (FRONTEND)                               │
+│  React 19 + Vite 8 + Tailwind CSS                                               │
+│                                                                                 │
+│  ┌───────────────────────┐   ┌────────────────────────┐   ┌───────────────────┐ │
+│  │   UI & Componentes    │   │      CvContext         │   │   Smart Fallback  │ │
+│  │  (Matrix Cyberpunk)   │   │  (Sincronización CV)   │   │  (Motor Offline)  │ │
+│  └──────────┬────────────┘   └───────────┬────────────┘   └─────────┬─────────┘ │
+└─────────────┼────────────────────────────┼──────────────────────────┼───────────┘
+              │ HTTP / REST                │ Inyección de Datos       │
+              ▼                            ▼                          ▼
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                                SERVIDOR (BACKEND)                               │
+│  Node.js + Express (Puerto 5000)                                                │
+│                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────┐  │
+│  │  Endpoint: POST /api/chat                                                 │  │
+│  │  - Validación de Payload & Historial                                      │  │
+│  │  - Ensamblador de System Prompt con datos de perfil y CV                  │  │
+│  │  - Google GenAI SDK (@google/genai) -> Modelo: gemini-2.5-flash           │  │
+│  │  - Fallback a @google/generative-ai o respuestas contextuales seguras     │  │
+│  └───────────────────────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────────────────────┘
+  </pre>
+
+  <h2>2.1 Gestión de Estado Global con Context API (<code>CvContext.jsx</code>)</h2>
+  <ul>
+    <li><strong>Sincronización del CV:</strong> Lee el archivo <code>patri-aparicio-cv.pdf</code> y mantiene en memoria la transcripción exacta de la trayectoria, formación y habilidades de Patri.</li>
+    <li><strong>Persistencia Local:</strong> Emplea <code>localStorage</code> para mantener la sesión del usuario activa.</li>
+    <li><strong>Inyección Dinámica en IA:</strong> Cualquier consulta realizada a través del asistente chatbot inyecta el contenido del CV como contexto inmutable para evitar alucinaciones en el modelo.</li>
+  </ul>
+
+  <h2>2.2 Principios de Rendimiento y Aceleración por Hardware</h2>
+  <ul>
+    <li><strong>Cero bloqueo del hilo principal:</strong> El efecto de lluvia digital Matrix y la animación de láser HUD corren acelerados por GPU mediante CSS Keyframes y Canvas API.</li>
+    <li><strong>Vídeos Ligeros:</strong> Los clips de demostración utilizan atributos <code>muted</code>, <code>loop</code>, <code>playsInline</code> y precarga controlada para garantizar tiempos de carga inferiores a 1 segundo.</li>
+    <li><strong>Seguridad de Credenciales:</strong> Las claves secretas de Google Gemini residen de forma estricta en el servidor backend (<code>server/.env</code>) y nunca se compilan en los ficheros del cliente.</li>
+  </ul>
+
+  <!-- SECCIÓN 3 -->
+  <div class="page-break"></div>
+  <h1>3. Catálogo Completo de Componentes UI</h1>
+
+  <h2>3.1 <code>NavbarPacman.jsx</code></h2>
+  <p>Barra de navegación superior fija (<code>fixed top-0 inset-x-0 z-50</code>) que incorpora una pista animada de Pac-Man interactiva. Cuenta con observador de scroll dinámico que detecta la sección visible en tiempo real y botón de acceso rápido al asistente virtual.</p>
+
+  <h2>3.2 <code>Hero.jsx</code></h2>
+  <p>Cabecera principal de alto impacto visual. Incorpora:</p>
+  <ul>
+    <li>Efecto de máquina de escribir (<em>Typewriter</em>) para el título profesional.</li>
+    <li>Avatar holográfico táctico con scanlines CRT, barrido láser HUD y marcadores perimetrales.</li>
+    <li>Widgets embebidos de clima en tiempo real (<code>WeatherWidget</code>) y frases técnicas para desarrolladores (<code>ApiWidget</code>).</li>
+  </ul>
+
+  <h2>3.3 <code>HeroRobot.jsx</code></h2>
+  <p>Dron explorador autónomo cibernético (<code>SCOUT_BOT</code>) que realiza una animación de patrullaje horizontal de 18 segundos sobre la sección de biografía.</p>
+
+  <h2>3.4 <code>About.jsx</code></h2>
+  <p>Panel interactivo de biografía con emulador de editor de código y tres pestañas seleccionables:</p>
+  <ul>
+    <li><code>profile.json</code>: Metadatos de contacto, formación y rol.</li>
+    <li><code>philosophy.js</code>: Declaración de principios de código limpio y arquitectura DRY/SOLID.</li>
+    <li><code>learning.log</code>: Hoja de ruta del bootcamp (+600h) hacia Full Stack.</li>
+  </ul>
+
+  <h2>3.5 <code>TechStack.jsx</code></h2>
+  <p>Matriz tecnológica dividida en cuatro cuadrantes interactivos:</p>
+  <div style="margin: 10px 0;">
+    <span class="badge badge-green">React 19 / 18</span>
+    <span class="badge badge-green">JavaScript ES6+</span>
+    <span class="badge badge-green">Tailwind CSS</span>
+    <span class="badge badge-blue">Figma & Stitch</span>
+    <span class="badge badge-blue">Vitest & RTL</span>
+    <span class="badge badge-blue">Node.js & Express</span>
+    <span class="badge badge-blue">PostgreSQL</span>
+    <span class="badge badge-green">Google Gemini API</span>
+  </div>
+
+  <h2>3.6 <code>Projects.jsx</code></h2>
+  <p>Rejilla interactiva con soporte híbrido para tarjetas con vídeo de alta resolución y capturas optimizadas, badges de tecnologías y enlaces directos a demos en Vercel y repositorios en GitHub.</p>
+
+  <h2>3.7 <code>CvSection.jsx</code></h2>
+  <p>Sección dedicada al Curriculum Vitae con visor embebido de <code>patri-aparicio-cv.pdf</code>, controles de ampliación a pantalla completa y botón de descarga directa del documento.</p>
+
+  <h2>3.8 <code>PortfolioAssistant.jsx</code></h2>
+  <p>Chatbot conversacional flotante (**Patri AI**) con preguntas predefinidas en diseño flexible (<em>flex-wrap</em>), indicador de escritura en tiempo real y fallback offline garantizado.</p>
+
+  <!-- SECCIÓN 4 -->
+  <div class="page-break"></div>
+  <h1>4. Ecosistema de APIs, Microservicios y Google Gemini</h1>
+
+  <h2>4.1 Endpoint REST: <code>POST /api/chat</code></h2>
+  <p>El servidor Express en <code>server/index.js</code> expone la ruta para procesar las consultas mediante el modelo <code>gemini-2.5-flash</code>:</p>
+  <pre>
+POST /api/chat HTTP/1.1
+Host: localhost:5000
+Content-Type: application/json
+
+{
+  "message": "¿Qué formación y experiencia tiene Patri?",
+  "history": [],
+  "cvText": "PATRICIA APARICIO DÍAZ...\nPerfil: Frontend Junior..."
+}
+  </pre>
+
+  <h2>4.2 Motor de Smart Fallback Local</h2>
+  <p>Si la aplicación se encuentra en un entorno estático o el servidor backend experimenta desconexión, <code>src/services/api.js</code> activa de forma instantánea el analizador semántico offline para dar respuesta inmediata sobre:</p>
+  <ul>
+    <li>Identidad y presentación profesional.</li>
+    <li>Stack tecnológico y herramientas.</li>
+    <li>Proyectos realizados y enlaces funcionales.</li>
+    <li>Disponibilidad inmediata para contratación (remoto / Sevilla).</li>
+  </ul>
+
+  <h2>4.3 APIs Externas Integradas en los Proyectos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Servicio / API</th>
+        <th>Proyecto</th>
+        <th>Uso y Funcionalidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Open-Meteo / Weather API</strong></td>
+        <td>Portafolio & Valhalla</td>
+        <td>Telemetría climática en directo para la ciudad de Sevilla.</td>
+      </tr>
+      <tr>
+        <td><strong>API Propia REST (CRUD)</strong></td>
+        <td>La Buhardilla Retro</td>
+        <td>Gestión completa de catálogo de productos vintage y autenticación.</td>
+      </tr>
+      <tr>
+        <td><strong>Tournament Sports API</strong></td>
+        <td>World Cup 2026</td>
+        <td>Visualización de grupos, resultados y calendarios en tiempo real.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECCIÓN 5 -->
+  <div class="page-break"></div>
+  <h1>5. Estrategia y Guía de Testing Automatizado</h1>
+  <p>El proyecto implementa una suite completa de pruebas unitarias y de integración utilizando <strong>Vitest</strong> y <strong>React Testing Library</strong>:</p>
+
+  <h3>Archivos de Prueba:</h3>
+  <ol>
+    <li><strong><code>src/tests/portfolioData.test.js</code>:</strong> Valida que los datos oficiales de Patri Aparicio, proyectos, skills y preguntas frecuentes existan y cumplan el esquema definido.</li>
+    <li><strong><code>src/tests/api.test.js</code>:</strong> Evalúa el correcto funcionamiento del cliente HTTP, el motor de respaldo inteligente offline y la llamada al servicio meteorológico.</li>
+    <li><strong><code>src/tests/components.test.jsx</code>:</strong> Comprueba el renderizado, accesibilidad y montaje de los componentes UI (<code>HeroRobot</code>, <code>ApiWidget</code>).</li>
+  </ol>
+
+  <pre>
+# Comandos de ejecución:
+npm run test     # Ejecución única para CI/CD
+npx vitest       # Modo interactivo en desarrollo
+  </pre>
+
+  <!-- SECCIÓN 6 -->
+  <h1>6. Guía de Despliegue y Puesta en Producción</h1>
+
+  <h2>6.1 Despliegue del Frontend en Vercel</h2>
+  <ul>
+    <li><strong>Framework Preset:</strong> Vite</li>
+    <li><strong>Build Command:</strong> <code>npm run build</code></li>
+    <li><strong>Output Directory:</strong> <code>dist</code></li>
+    <li><strong>Reglas de Enrutamiento SPA:</strong> Archivo <code>vercel.json</code> con reescritura total a <code>/index.html</code> para evitar errores 404 al recargar rutas internas.</li>
+  </ul>
+
+  <h2>6.2 Despliegue del Backend en Render</h2>
+  <ul>
+    <li><strong>Tipo de Servicio:</strong> Web Service (Node.js)</li>
+    <li><strong>Root Directory:</strong> <code>server</code></li>
+    <li><strong>Start Command:</strong> <code>node index.js</code></li>
+    <li><strong>Variables de Entorno:</strong> <code>PORT=5000</code>, <code>GEMINI_API_KEY=tu_clave_gemini</code></li>
+  </ul>
+
+  <!-- SECCIÓN 7 -->
+  <div class="page-break"></div>
+  <h1>7. Proyectos Destacados del Portafolio</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Proyecto</th>
+        <th>Descripción y Stack</th>
+        <th>Demo en Vivo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>World Cup 2026</strong></td>
+        <td>Plataforma deportiva completa en tiempo real con estadísticas y filtros.<br><small>React 19 • JavaScript ES6+ • REST APIs • React Router</small></td>
+        <td><a href="https://world-cup2026-sigma-weld.vercel.app/">world-cup2026-sigma-weld.vercel.app</a></td>
+      </tr>
+      <tr>
+        <td><strong>HabitatCode Inmobiliaria</strong></td>
+        <td>Plataforma inmobiliaria con diseño exclusivo Figma trasladado a React.<br><small>React • Tailwind CSS • Figma UI/UX • Filtros dinámicos</small></td>
+        <td><a href="https://inmobiliaria-kappa-lake.vercel.app/">inmobiliaria-kappa-lake.vercel.app</a></td>
+      </tr>
+      <tr>
+        <td><strong>Valhalla del Chatarrero</strong></td>
+        <td>E-commerce cyberpunk con clima meteorológico en directo y efectos FX.<br><small>React • OpenWeather API • Audio/Video FX • State Management</small></td>
+        <td><a href="https://valhalla-del-chatarrero.vercel.app/">valhalla-del-chatarrero.vercel.app</a></td>
+      </tr>
+      <tr>
+        <td><strong>La Buhardilla Retro</strong></td>
+        <td>E-commerce vintage que consume API propia para CRUD completo.<br><small>React • API Propia (CRUD) • Meteo API • Tailwind CSS</small></td>
+        <td><a href="https://la-buhardilla-retro.vercel.app/">la-buhardilla-retro.vercel.app</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECCIÓN 8 -->
+  <h1>8. Enlaces Oficiales y Repositorios</h1>
+  <ul>
+    <li><strong>Portafolio Web Oficial:</strong> <a href="https://patricia-aparicio-dev.vercel.app/">https://patricia-aparicio-dev.vercel.app/</a></li>
+    <li><strong>Repositorio del Portafolio:</strong> <a href="https://github.com/apariciodiazpatricia-cell/patricia-aparicio-dev">https://github.com/apariciodiazpatricia-cell/patricia-aparicio-dev</a></li>
+    <li><strong>Repositorio de Perfil GitHub:</strong> <a href="https://github.com/apariciodiazpatricia-cell/apariciodiazpatricia-cell">https://github.com/apariciodiazpatricia-cell/apariciodiazpatricia-cell</a></li>
+    <li><strong>Perfil Profesional LinkedIn:</strong> <a href="https://linkedin.com/in/patriciaapariciodiaz">https://linkedin.com/in/patriciaapariciodiaz</a></li>
+  </ul>
+
+  <div class="doc-footer">
+    DOCUMENTACIÓN TÉCNICA OFICIAL • PATRI APARICIO © 2026 • SEVILLA, ESPAÑA
+  </div>
+
+</body>
+</html>
