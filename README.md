@@ -4,7 +4,7 @@
 
 <br><br>
 
-[![Matrix Theme](https://img.shields.io/badge/THEME-MATRIX_CYBERPUNK-00FF66?style=for-the-badge&logo=matrix&logoColor=black&labelColor=0a0a0a)](https://world-cup2026-sigma-weld.vercel.app/)
+[![Matrix Theme](https://img.shields.io/badge/THEME-MATRIX_CYBERPUNK-00FF66?style=for-the-badge&logo=matrix&logoColor=black&labelColor=0a0a0a)](https://patricia-aparicio-dev.vercel.app/)
 [![React](https://img.shields.io/badge/REACT-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black&labelColor=0a0a0a)](https://react.dev/)
 [![JavaScript](https://img.shields.io/badge/JAVASCRIPT-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black&labelColor=0a0a0a)](https://developer.mozilla.org/es/docs/Web/JavaScript)
 [![Vitest](https://img.shields.io/badge/TESTING-VITEST_%26_RTL-FCC72B?style=for-the-badge&logo=vitest&logoColor=black&labelColor=0a0a0a)](https://vitest.dev/)
@@ -19,7 +19,7 @@
   He diseñado y desarrollado esta plataforma con una experiencia inmersiva Matrix Cyberpunk, código limpio y rendimiento optimizado.
 </p>
 
-[🌐 Ver Mi Portafolio en Vivo (Vercel)](https://world-cup2026-sigma-weld.vercel.app/) • [💼 Conectar en LinkedIn](https://linkedin.com/in/patriciaapariciodiaz) • [🐙 Ver Mis Repositorios en GitHub](https://github.com/apariciodiazpatricia-cell) • [📧 Escribirme un Correo](mailto:apariciodiazpatricia@gmail.com)
+[🌐 Ver Mi Portafolio en Vivo (Vercel)](https://patricia-aparicio-dev.vercel.app/) • [💼 Conectar en LinkedIn](https://linkedin.com/in/patriciaapariciodiaz) • [🐙 Ver Mis Repositorios en GitHub](https://github.com/apariciodiazpatricia-cell) • [📧 Escribirme un Correo](mailto:apariciodiazpatricia@gmail.com)
 
 </div>
 
@@ -268,7 +268,7 @@ Para profundizar en la arquitectura y decisiones técnicas, consulta las guías 
         <img src="https://img.shields.io/badge/GMAIL-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
       </a>
       &nbsp;
-      <a href="https://world-cup2026-sigma-weld.vercel.app/">
+      <a href="https://patricia-aparicio-dev.vercel.app/">
         <img src="https://img.shields.io/badge/PORTFOLIO_WEB-00FF66?style=for-the-badge&logo=vercel&logoColor=black" alt="Portfolio" />
       </a>
       <br><br>
